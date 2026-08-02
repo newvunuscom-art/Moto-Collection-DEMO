@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header {
+
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    img {
+    width:40px;
+    }
+}
+
+.logo {
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .menu{
+    display: flex;
+    justify-content: space-between;
+}
