@@ -32,27 +32,20 @@ const products = [
     }
 ];
 
-const productlist = document.querySelector("#productlist");
+const cards = document.querySelectorAll(".card");
 
-products.forEach(product => {
+products.forEach((product, index) => {
+    
+    cards[index].querySelector("img").src = product.image;
 
-    productlist.innerHTML += `
-        <div class ="container">
-        <div class="card">
-        <div class ="box-pd">
-            <img src="${product.image}" alt="${product.name}">
+    cards[index].querySelector(".product-name").textContent = product.name;
 
-            <h2>${product.name}</h2>
+    cards[index].querySelector(".product-price").textContent =
+        `฿ ${product.price}`;
 
-            <div class = "textend">            
-            <p>฿${product.price}</p>
-            <p>เหลือ ${product.stock} ชิ้น</p>
-            </div>
-        </div>
-        </div>
-        </div>
-    `;
+    cards[index].querySelector(".product-stock").textContent =
+       `เหลือ ${product.stock} ชิ้น`;
+}); 
 
-});
 console.log(product);
 console.log(product.image);
