@@ -7,6 +7,22 @@
     <title>Admin page</title>
 </head>
 <body>
-    
+    <main class="admin">
+        <h1>จัดการสินค้า</h1>
+        <form id="productform">
+            <input type="text" id="product-name" placeholder="ชื่อสินค้า" required>
+            <input type="number" id="product-price" placeholder="ราคา" required>
+            <input type="text" id="product-image" placeholder="URL รูปภาพ" required>
+            <input type="number" id="product-stock" placeholder="สต็อก" required>
+            <button type="submit">
+                เพิ่มสินค้า
+            </button>
+        </form>
+
+        <section id="productlist">
+
+        </section>
+    </main>
+    <script src="admin.js"></script>
 </body>
 </html>
