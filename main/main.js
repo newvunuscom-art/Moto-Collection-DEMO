@@ -38,6 +38,32 @@ function showproducts() {
     }); 
 
 }
+
+function updateCartCount() {
+
+    const cart = JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+
+    const cartCount = document.querySelector("#cart-count");
+
+    if (!cartCount) return;
+
+    const totalQuantity = cart.reduce(
+        (total, item) => total + item.quantity,
+        0
+    );
+
+    cartCount.textContent = totalQuantity;
+}
+
+updateCartCount();
+
+window.addEventListener(
+    "storage",
+    updateCartCount
+);
+
 showproducts();
 
 console.log(products);

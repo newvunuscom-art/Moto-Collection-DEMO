@@ -20,6 +20,36 @@ header {
     }
 }
 
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-icon a {
+    text-decoration: none;
+    font-size: 30px;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+
+    background-color: red;
+    color: white;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    font-size: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .space{
     display: flex;
     justify-content: space-between;
