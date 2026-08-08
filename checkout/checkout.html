@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="checkout.css">
+    <title>ชำระเงิน</title>
+</head>
+<body>
+    <main class="checkout">
+        <div class="container">
+        <h1>ชำระเงิน</h1>
+
+        <section>
+            <h2>ข้อมูลผู้ซื้อ</h2>
+
+            <label for="custom-name">ชื่อ-นามสกุล</label>
+
+            <input type="text" name="" id="customer-name" required>
+
+            <label for="customer-phone">เบอร์โทร</label>
+
+            <input type="number" name="" id="customer-phone" required>
+
+            <label for="customer-address">ที่อยู่</label>
+
+            <textarea name="" id="customer-address" required></textarea>
+
+        </section>
+
+        <section>
+            <h2>รายการสินค้า</h2>
+
+            <div id="checkout-list"></div>
+
+            <h2>รวม : <span id="checkout-total">฿0</span></h2>
+        </section>
+
+        <section>
+            <h2>วิธีชำระเงิน</h2>
+
+            <label>
+                <input type="radio" name="payment" value="cod">
+                โอนเงิน
+            </label>
+        </section>
+
+        <section id="transfer-section">
+
+            <h2>ชำระด้วยการโอน</h2>
+
+            <p>กรุณาโอนตามยอดที่แสดง</p>
+
+            <div class="qr"> QR CODE</div>
+
+            <label for="slip">
+                อัพโหลดสลีป
+            </label>
+
+            <input type="file" name="" id="slip" accept="image/*">
+        </section>
+
+        <button id="confirm-order">
+            ยืนยันการสั่งซื้อ
+        </button>
+        </div>
+    </main>
+    <script src="checkout.js"></script>
+</body>
+</html>
