@@ -110,5 +110,4 @@ function deleteProduct(id) {
 }
 
 
-showproducts();
 console.log(products);

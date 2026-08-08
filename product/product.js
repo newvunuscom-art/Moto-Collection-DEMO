@@ -72,7 +72,7 @@ else {
                 }
             </button>
 
-            <button ${product.stock <= 0 ? "disabled" : ""}>
+            <button id="checkout"${product.stock <= 0 ? "disabled" : ""}>
                 ${
                     product.stock <= 0
                     ? "สินค้าหมด"
@@ -86,38 +86,44 @@ else {
 
 const addCartBtn = document.querySelector("#addcart");
 
-addCartBtn.addEventListener("click", () => {
+addCartBtn.addEventListener("click", function () {
 
     const quantity = Number(
         document.querySelector("#quantity").value
     );
-
+    
+    let cart = JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+    
+    
     if(quantity <= 0 ){
         alert("กรุณาใส่จำนวนสินค้า");
         return;
     }
-
+    
     if(quantity > product.stock){
         alert("สินค้าในสต็อกไม่เพียงพอ");
         return;
     }
-
-    let cart = JSON.parse(
-        localStorage.getItem("cart")
-    ) || [];
-
+    
     const existingProduct = cart.find(
         item => item.id === product.id
     );
+    
 
     if(existingProduct){
+
         if(existingProduct.quantity + quantity > product.stock){
+
         alert("จำนวนสินค้าในสต็อก");
         return;
+        }
 
         existingProduct.quantity += quantity;
 
-        }else {
+        }
+        else {
             cart.push({
                 id: product.id,
                 name:product.name,
@@ -127,7 +133,32 @@ addCartBtn.addEventListener("click", () => {
                 quantity:quantity
             });
         }
-        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+        );
+
+        updateCartCount();
+
         alert("เพิ่มสินค้าเรียบร้อยแล้ว");
-    }
-})
+
+console.log("cart:", cart);
+});
+
+function updateCartCount() {
+
+    const cart = JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+
+    const cartCount = document.querySelector("#cart-count");
+
+    if(!cartCount) return;
+
+    const totalQuantity = cart.reduce(
+        (total, item) => total + item.quantity,0
+    );
+    cartCount.textContent = totalQuantity;
+}
+
+updateCartCount();
