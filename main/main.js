@@ -1,51 +1,43 @@
-const products = [
-    {
-        id: 1,
-        name: "Test",
-        image: "https://placehold.co/300x200",
-        price: 180,
-        stock: 20
-    },
 
-    {
-        id: 2,
-        name: "Test",
-        image: "https://placehold.co/300x200",
-        price: 150,
-        stock: 15
-    },
+let products = JSON.parse(
+    localStorage.getItem("products")
+) || [];
 
-    {
-        id: 3,
-        name: "Test",
-        image: "https://placehold.co/300x200",
-        price: 200,
-        stock: 10
-    },
+const productList = document.querySelector("#productlist");
 
-    {
-        id: 4,
-        name: "Test",
-        image: "https://placehold.co/300x200",
-        price: 200,
-        stock: 10
-    }
-];
+function viewProduct(id) {
+    window.location.href = `../product/product.html?id=${id}`;
+}
 
-const cards = document.querySelectorAll(".card");
+function showproducts() {
 
-products.forEach((product, index) => {
-    
-    cards[index].querySelector("img").src = product.image;
+    productList.innerHTML = "";
 
-    cards[index].querySelector(".product-name").textContent = product.name;
+    products.forEach(product =>{
+        const card = document.createElement("div");
 
-    cards[index].querySelector(".product-price").textContent =
-        `฿ ${product.price}`;
+        card.classList.add("card");
 
-    cards[index].querySelector(".product-stock").textContent =
-       `เหลือ ${product.stock} ชิ้น`;
-}); 
+        card.innerHTML =`
+        <div class="box-pd">
+        <img src = "${product.image}" alt = "${product.name}">
+        <div class ="card-info"
+        <h2>${product.name}</h2>
+        <div class ="textend">
+        <p>฿${product.price}</p>
+        <p>เหลือ ${product.stock} ชิ้น</p>
 
-console.log(product);
-console.log(product.image);
+        </div>
+        <div class="btn">
+        <button onclick="viewProduct(${product.id})" ${product.stock <= 0 ? "disabled" : ""}> ${product.stock <= 0 ? "สินค้าหมด" : "ซื้อสินค้า"}</button>
+        </div>
+        </div>
+        </div>
+        `
+        productList.appendChild(card);
+    }); 
+
+}
+showproducts();
+
+console.log(products);
