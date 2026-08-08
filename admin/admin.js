@@ -109,5 +109,21 @@ function deleteProduct(id) {
 
 }
 
+function updateCartCount() {
 
+    const cart = JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+
+    const cartCount = document.querySelector("#cart-count");
+
+    if(!cartCount) return;
+
+    const totalQuantity = cart.reduce(
+        (total, item) => total + item.quantity,0
+    );
+    cartCount.textContent = totalQuantity;
+}
+
+showproducts();
 console.log(products);
