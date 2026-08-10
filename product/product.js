@@ -14,6 +14,7 @@ const product = products.find(
     item => item.id === productId
 );
 
+
 console.log("Product:", product);
 
 const productDetail = document.querySelector("#product-detail");
@@ -69,14 +70,6 @@ else {
                     product.stock <= 0
                     ? "สินค้าหมด"
                     : "เพิ่มลงตะกร้า"
-                }
-            </button>
-
-            <button id="checkout"${product.stock <= 0 ? "disabled" : ""}>
-                ${
-                    product.stock <= 0
-                    ? "สินค้าหมด"
-                    : "ซื้อเลย"
                 }
             </button>
 
