@@ -7,12 +7,31 @@
     <title>Admin page</title>
 </head>
 <body>
+    
+        <div class="admin-header">
+        <div>
+            <h1>จัดการสินค้า</h1>
+
+            <p>
+                Admin:
+                <span id="admin-name">
+                    กำลังโหลด...
+                </span>
+            </p>
+        </div>
+
+        <button type ="button" id="admin-logout">
+            ออกจากระบบ
+        </button>
+    </div>
+
     <main class="admin">
         <h1>จัดการสินค้า</h1>
         <form id="productform">
             <input type="text" id="product-name" placeholder="ชื่อสินค้า" maxlength="100" required>
             <input type="number" id="product-price" placeholder="ราคา" required>
-            <input type="text" id="product-image" placeholder="URL รูปภาพ" required>
+            <input type="file" name="" id="product-image" accept="image/*" placeholder="ใส่รูปสินค้า" required>
+
             <input type="number" id="product-stock" placeholder="สต็อก" maxlength="100" required>
             <button type="submit">
                 เพิ่มสินค้า
@@ -22,7 +41,17 @@
         <section id="productlist">
 
         </section>
+
+        <section class="admin-orders">
+
+            <h2>ตรวจสอบสินค้า</h2>
+
+            <div id="order-list">
+                <p>กำลังโหลดคำสั่งซื้อ</p>
+            </div>
+
+        </section>
     </main>
-    <script src="admin.js"></script>
+    <script type="module" src="admin.js"></script>
 </body>
 </html>

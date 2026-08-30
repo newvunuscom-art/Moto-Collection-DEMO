@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --accent: #06b6d4;
+    --text: #172033;
+    --muted: #64748b;
+    --border: #dbe5ef;
+    --white: #ffffff;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 12px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: linear-gradient(135deg, #eff8ff, #ffffff 55%, #e8f7fb);
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 520px;
+    padding: 32px;
+    background: rgba(255, 255, 255, .96);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(30, 64, 175, .16);
+}
+
+.auth-container h1 {
+    margin-bottom: 24px;
+    color: var(--primary-dark);
+    text-align: center;
+    font-size: 30px;
+}
+
+#register-form {
+    display: grid;
+    gap: 14px;
+}
+
+#register-form input,
+#register-form textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    color: var(--text);
+    background: var(--white);
+    font: inherit;
+    transition: .2s ease;
+}
+
+#register-form input:focus,
+#register-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .14);
+}
+
+#register-form textarea {
+    min-height: 105px;
+    resize: vertical;
+}
+
+#register-form button {
+    width: 100%;
+    margin-top: 6px;
+    padding: 13px;
+    border: 0;
+    border-radius: 10px;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+#register-form button:hover {
+    background: linear-gradient(135deg, var(--primary-dark), #0891b2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, .25);
+}
+
+.login-link {
+    margin-top: 20px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.login-link a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px 10px;
+    }
+
+    .auth-container {
+        padding: 24px 16px;
+        border-radius: 16px;
+    }
+
+    .auth-container h1 {
+        font-size: 25px;
+    }
+}

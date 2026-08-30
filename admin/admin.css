@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --accent: #06b6d4;
+    --text: #172033;
+    --muted: #64748b;
+    --border: #dbe5ef;
+    --white: #ffffff;
+    --surface: rgba(255, 255, 255, .95);
+    --shadow: 0 12px 30px rgba(30, 64, 175, .14);
+}
+
+body {
+    min-height: 100vh;
+    padding: 24px 14px 50px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: linear-gradient(135deg, #eaf6ff, #ffffff 55%, #e4f8fb);
+}
+
+.admin-header,
+.admin {
+    width: min(100%, 1150px);
+    margin-inline: auto;
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+    padding: 20px 24px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.admin-header h1,
+.admin > h1 {
+    color: var(--primary-dark);
+}
+
+.admin-header h1 {
+    margin-bottom: 6px;
+    font-size: 28px;
+}
+
+.admin-header p {
+    color: var(--muted);
+}
+
+#admin-name {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+#admin-logout {
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 10px;
+    color: var(--white);
+    background: #ef4444;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+#admin-logout:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+.admin {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .88);
+    box-shadow: var(--shadow);
+}
+
+.admin > h1 {
+    margin-bottom: 22px;
+    font-size: 30px;
+}
+
+#productform {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: #f8fbff;
+}
+
+#productform input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    color: var(--text);
+    background: var(--white);
+    font: inherit;
+}
+
+#productform input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .13);
+}
+
+#productform button {
+    grid-column: 1 / -1;
+    padding: 13px;
+    border: 0;
+    border-radius: 10px;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+#productform button:hover {
+    background: linear-gradient(135deg, var(--primary-dark), #0891b2);
+    transform: translateY(-2px);
+}
+
+#productlist {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.card {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--white);
+    box-shadow: 0 8px 20px rgba(30, 64, 175, .08);
+    transition: .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: #f3f9ff;
+}
+
+.admin-orders {
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--surface);
+}
+
+.admin-orders h2 {
+    margin-bottom: 16px;
+    color: var(--primary-dark);
+}
+
+#order-list {
+    display: grid;
+    gap: 12px;
+}
+
+#order-list > * {
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #f8fbff;
+}
+
+@media (max-width: 950px) {
+    #productlist {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 14px 10px 35px;
+    }
+
+    .admin-header {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 18px 16px;
+    }
+
+    #admin-logout {
+        width: 100%;
+    }
+
+    .admin {
+        padding: 20px 14px;
+    }
+
+    #productform {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
+    #productlist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 430px) {
+    .admin-header h1,
+    .admin > h1 {
+        font-size: 24px;
+    }
+
+    #productlist {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        max-width: 360px;
+        margin-inline: auto;
+    }
+
+    .admin-orders {
+        padding: 16px 12px;
+    }
+}

@@ -7,43 +7,99 @@
     <title>Woraphat Shop</title>
 </head>
 <body>
-    <header class="header">
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<header class="header">
+        
         <div class="container">
-        <nav class="navbar">
+            <nav class="navbar">
             <div class="logo">
                 <h1>Moto</h1><p>Collection</p>
                 </div>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="hamburger" aria-label="เปิดเมนู">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
             <ul class="menu">
                 
                 <div class="item-menu">
                 <input type="search">
-                <button id="search-btn"><img src="/Moto-collection/icon/search-svgrepo-com (1).png" alt=""></button>
+                <button id="search-btn"><img src="../Moto-collection/icon/search-svgrepo-com (1).png" alt=""></button>
                 <div class="cart-icon">
-                <a href="/cart/cart.html">
-                <img src="/Moto-collection/icon/shop.svg" alt="">
+                <a href="../cart/cart.html">
+                <img src="../Moto-collection/icon/shop.svg" alt=""> 
                 <span id="cart-count">0</span>
                 </a>
                 </div>
-                <a href="profile"><img src="/Moto-collection/icon/user.svg" alt=""></a>
+                 <div class="user-menu">
+                    
+
+                     <button
+                     id="user-button"
+                     class="user-button"
+                        >
+
+                            <img
+                                src="../Moto-collection/icon/user.svg"
+                                alt="ผู้ใช้"
+                            >
+
+                            <span id="user-name">
+                                ...
+                            </span>
+
+                        </button>
+
+
+                        <!-- DROPDOWN -->
+                        <div
+                            id="user-dropdown"
+                            class="user-dropdown"
+                        >
+                        
+
+                            <a href="../profile/profile.html">
+                                แก้ไขโปรไฟล์
+                            </a>
+
+                            <a href="../order-history/order-history.html">ประวัติการสั้งซื้อ</a>
+                            
+
+                    <button id="logout-btn">
+                                ออกจากระบบ
+                    </button>
                 </div>
-            </ul>
-
-        </nav>
-    </div>
-    </header>
-
-    <section class="banner">
-        <div class="container">
-            <div class="banner-box">
-                <img src="https://placehold.co/900x300" alt="">
             </div>
         </div>
+    </ul>
+</nav>
+</div>
+</header>
+
+<section class="banner">
+    <div class="container">
+            <!-- ...existing code... -->
+
+<div class="banner-box">
+    <div class="banner-track">
+        <img src="https://placehold.co/900x300/2563eb/ffffff?text=Moto+Collection" alt="Moto Collection">
+        <img src="https://placehold.co/900x300/06b6d4/ffffff?text=New+Products" alt="สินค้าใหม่">
+        <img src="https://placehold.co/900x300/1e40af/ffffff?text=Special+Offer" alt="โปรโมชั่นพิเศษ">
+    </div>
+</div>
+
+<!-- ...existing code... -->
     </section>
 
     <section class="product">
         <div class="container">
         <div id="productlist"></div>
-        </div>
+    </div>
     </section>
 
 <script src="main.js"></script>
