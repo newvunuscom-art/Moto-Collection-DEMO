@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,25 @@
     <title>Register Page</title>
 </head>
 <body>
-    
-    <script src="register.js"></script>
+    <main class="auth-container">
+        <h1>สมัครสมาชิก</h1>
+
+        <form id="register-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="tel" id="phone" placeholder="เบอร์โทร" required>
+            <textarea id="address" placeholder="ที่อยู่" required></textarea>
+
+            <button type="submit">สมัครสมาชิก</button>
+        </form>
+
+        <p class="login-link">
+            มีบัญชีแล้ว <a href="../login/login.html">เข้าสู่ระบบ</a>
+        </p>
+    </main>
+
+    <script src="./register.js"></script>
 </body>
 </html>

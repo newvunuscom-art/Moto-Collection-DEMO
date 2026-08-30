@@ -8,13 +8,12 @@
 </head>
 <body>
     <header>
-        <div class="container">
+    <div class="container">
         <div class="space">
-        <div>
-        <a href="/cart/cart.html"><-- กลับ</a>
+            <a href="../cart/cart.html">&lt;-- กลับ</a>
         </div>
-        </div>  
-    </header>
+    </div>
+</header>
     <main class="checkout">
         <div class="container">
         <h1>ชำระเงิน</h1>
@@ -25,6 +24,10 @@
             <label for="custom-name">ชื่อ-นามสกุล</label>
 
             <input type="text" name="" id="customer-name" required>
+
+            <label for="customer-email">Email</label>
+        
+            <input type="email" name="" id="customer-email" required>
 
             <label for="customer-phone">เบอร์โทร</label>
 
@@ -48,25 +51,12 @@
             <h2>วิธีชำระเงิน</h2>
 
             <label>
-                <input type="radio" name="payment" value="cod">
+                <input type="radio" name="payment" value="bank">
                 โอนเงิน
             </label>
         </section>
 
-        <section id="transfer-section">
-
-            <h2>ชำระด้วยการโอน</h2>
-
-            <p>กรุณาโอนตามยอดที่แสดง</p>
-
-            <div class="qr"> QR CODE</div>
-
-            <label for="slip">
-                อัพโหลดสลีป
-            </label>
-
-            <input type="file" name="" id="slip" accept="image/*">
-        </section>
+       
 
         <button id="confirm-order">
             ยืนยันการสั่งซื้อ

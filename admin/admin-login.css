@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --accent: #06b6d4;
+    --text: #172033;
+    --muted: #64748b;
+    --border: #dbe5ef;
+    --white: #ffffff;
+    --shadow: 0 16px 40px rgba(30, 64, 175, .16);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: linear-gradient(135deg, #eaf6ff, #ffffff 55%, #e4f8fb);
+}
+
+.login-container {
+    width: min(100%, 460px);
+}
+
+.login-box {
+    padding: 36px 32px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.login-box h1 {
+    color: var(--primary-dark);
+    font-size: 42px;
+    line-height: 1;
+}
+
+.login-box > p:first-of-type {
+    margin-top: 8px;
+    margin-bottom: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#admin-login-form {
+    display: grid;
+    gap: 15px;
+}
+
+#admin-login-form input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    color: var(--text);
+    background: var(--white);
+    font: inherit;
+    transition: .2s ease;
+}
+
+#admin-login-form input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .14);
+}
+
+#admin-login-form button {
+    margin-top: 5px;
+    padding: 13px;
+    border: 0;
+    border-radius: 10px;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+#admin-login-form button:hover {
+    background: linear-gradient(135deg, var(--primary-dark), #0891b2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, .25);
+}
+
+#message {
+    min-height: 24px;
+    margin-top: 18px;
+    color: #dc2626;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 14px;
+    }
+
+    .login-box {
+        padding: 28px 18px;
+        border-radius: 17px;
+    }
+
+    .login-box h1 {
+        font-size: 36px;
+    }
+}

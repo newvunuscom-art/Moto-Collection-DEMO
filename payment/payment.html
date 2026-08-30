@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="payment.css">
+    <title>ชำระเงิน</title>
+</head>
+<body>
+    
+
+    <main class="payment-container">
+
+        <h1>
+            ชำระเงิน
+        </h1>
+
+
+        <div class="order-box">
+
+            <p>
+                เลขที่คำสั่งซื้อ
+            </p>
+
+            <h2 id="order-id">
+                กำลังโหลด...
+            </h2>
+
+
+            <p>
+                ยอดที่ต้องชำระ
+            </p>
+
+            <h2
+                id="order-total"
+                class="total"
+            >
+                ฿0
+            </h2>
+
+        </div>
+
+
+        <div class="payment-box">
+
+            <h2>
+                โอนเงินผ่านธนาคาร
+            </h2>
+
+
+            <p>
+                ธนาคาร: กสิกรไทย
+            </p>
+
+            <p>
+                ชื่อบัญชี: Woraphat
+            </p>
+
+            <p>
+                เลขบัญชี: 123-4-56789-0
+            </p>
+
+
+            <div class="qr">
+
+                <img
+                    src="../image/payment-qr.png"
+                    alt="QR Code"
+                >
+
+            </div>
+
+
+            <h3>
+                อัปโหลดสลิป
+            </h3>
+
+
+            <input
+                type="file"
+                id="payment-slip"
+                accept="image/*"
+            >
+
+
+            <button
+                id="confirm-payment"
+                type="button"
+            >
+                ยืนยันการชำระเงิน
+            </button>
+
+        </div>
+
+
+        <button
+            id="back-checkout"
+            type="button"
+        >
+            กลับ
+        </button>
+        </main>
+    <script src="payment.js"></script>
+</body>
+</html>
